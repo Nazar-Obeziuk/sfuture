@@ -1,0 +1,107 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+.block {
+    width: 590px;
+    height: 340px;
+    border: 1px solid $lightgray;
+    border-radius: 10px;
+
+    &__wrapper {
+        height: 100%;
+
+        &_bottom {
+            height: 248px;
+            position: relative;
+        }
+
+        &_top {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__bottom {
+
+        &_main {
+            @include fl-center-sb-col;
+        }
+    }
+
+    &__top {
+
+        &_header {
+            padding: 30px;
+            width: 100%;
+            @include fl-center-sb;
+        }
+
+        &_schedule {
+            padding: 0 30px;
+            width: 586px;
+            @include fl-center-sb;
+        }
+
+        &_col {
+            width: 50px;
+            height: 230px;
+            @include fl-center-sb-col;
+        }
+    }
+}
+.bottom {
+
+    &__main {
+
+        &_line {
+            width: 100%;
+            height: 50px;
+            border-top: 1px dashed $lightgray;
+        }
+    }
+}
+.top {
+
+    &__header {
+
+        &_title {
+        }
+
+        &_category {
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            background: $lightblue;
+            @include fl-center-center;
+        }
+    }
+
+    &__col {
+
+        &_wrapper {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;;
+        }
+
+        &_text {
+        }
+    }
+}
+.col {
+
+    &__wrapper {
+
+        &_item {
+            width: 100%;
+            background: $lightblue;
+            border-radius: 10px;
+        }
+    }
+}
+
+.today {
+    color: red;
+}

@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="sidebar__wrapper">
+        <div routerLink="/" class="sidebar__logo_block">
+            <img class="sidebar__logo_image" src="assets/images/sidebar-logo.svg" alt="">
+            <h2 class="sidebar__logo_text">SFuture</h2>
+        </div>
+
+        <nav class="sidebar__nav_block">
+            <ul class="sidebar__nav_list">
+                <li class="sidebar__list_item">
+                    <a routerLink="/home" class="sidebar__list_link">
+                        <img src="assets/images/home-icon.svg" alt="" class="sidebar__link_icon">
+                        <p routerLinkActive="active__page" class="sidebar__link_text">Home</p>
+                    </a>
+                </li>
+                <li class="sidebar__list_item">
+                    <a routerLink="/exercise" class="sidebar__list_link" >
+                        <img src="assets/images/exercise-icon.svg" alt="" class="sidebar__link_icon">
+                        <p routerLinkActive="active__page" class="sidebar__link_text">Exercises</p>
+                    </a>
+                </li>
+                <li class="sidebar__list_item">
+                    <a routerLink="/plan" class="sidebar__list_link">
+                        <img src="assets/images/plan-icon.svg" alt="" class="sidebar__link_icon">
+                        <p routerLinkActive="active__page" class="sidebar__link_text">Plan</p>
+                    </a>
+                </li>
+                <li class="sidebar__list_item">
+                    <a routerLink="/admin" routerLinkActive="active__page" class="sidebar__list_link">
+                        <img src="assets/images/profile-icon.svg" alt="" class="sidebar__link_icon">
+                        <p routerLinkActive="active__page" class="sidebar__link_text">Profile</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__calendar_block">
+            <p class="sidebar__calendar_title">Calendar</p>
+            <div class="sidebar__calendar_items">
+                <div class="sidebar__calendar_item">
+                    <div class="calendar__item_progress">
+
+                    </div>
+                    <p class="calendar__item_text">
+                        December, Mon
+                    </p>
+                    <div class="calendar__item_count">
+                        <p class="calendar__count_text">4</p>
+                    </div>
+                </div>
+                <div class="sidebar__calendar_item">
+                    <div class="calendar__item_progress">
+
+                    </div>
+                    <p class="calendar__item_text">
+                        December, Mon
+                    </p>
+                    <div class="calendar__item_count">
+                        <p class="calendar__count_text">4</p>
+                    </div>
+                </div>
+                <div class="sidebar__calendar_item">
+                    <div class="calendar__item_progress">
+
+                    </div>
+                    <p class="calendar__item_text">
+                        December, Mon
+                    </p>
+                    <div class="calendar__item_count">
+                        <p class="calendar__count_text">4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar__line"></div>
+
+        <div class="sidebar__settings_block">
+            <ul class="sidebar__settings_list">
+                <li class="settings__list_item">
+                    <a routerLink="/settings" class="settings__list_link">
+                        <img src="assets/images/settings-icon.svg" alt="" class="settings__link_icon">
+                        <p routerLinkActive="active__page" class="settings__link_text">Settings</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar__theme_block">
+            <div [class.active__theme]="this.sidebarService.isLightThemeActive" (click)="toggleLightTheme()" class="sidebar__light_theme">
+                <img class="light__theme_icon" src="assets/images/light-theme.svg" alt="">
+            </div>
+            <div [class.active__theme]="!this.sidebarService.isLightThemeActive" (click)="toggleDarkTheme()" class="sidebar__dark_theme">
+                <img class="dark__theme_icon" src="assets/images/dark-theme.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="block">
+    <div class="block__wrapper">
+        <div class="block__top_header">
+            <h3 class="top__header_title">Training Analytics</h3>
+            <div class="top__header_category">Weekly</div>
+        </div>
+        <div class="block__wrapper_bottom">
+            <div class="block__bottom_main">
+                <div class="bottom__main_line"></div>
+                <div class="bottom__main_line"></div>
+                <div class="bottom__main_line"></div>
+                <div class="bottom__main_line"></div>
+                <div class="bottom__main_line"></div>
+            </div>
+            <div class="block__wrapper_top">
+                <div class="block__top_schedule">
+                    @for (day of daysOfWeek; track $index) {
+                        <div class="block__top_col">
+                            <div class="top__col_wrapper">
+                                <div [style.height.%]="day.percentCount" class="col__wrapper_item"></div>
+                            </div>
+                            <h5 class="top__col_text">{{ day.nameOfDay| slice:0:3 }}</h5>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

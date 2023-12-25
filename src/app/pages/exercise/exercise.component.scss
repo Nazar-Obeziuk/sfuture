@@ -1,0 +1,280 @@
+@import '../../shared/styles/variables';
+@import '../../shared/styles/mixins';
+
+.container {
+}
+.wrapper {
+}
+.exercise {
+    
+        &__header {
+            padding: 30px 30px 0 30px;
+            @include fl-center-sb;
+
+			&_title {
+                color: $black;
+			}
+
+			&_text {
+                margin-top: 10px;
+                color: $text-gray;
+			}
+
+            &_inner {
+                width: 228px;
+                height: 44px;
+                background: $lightgray;
+                border-radius: 20px;
+                @include fl-center-center;
+                padding: 4px;
+            }
+    
+            &_progress {
+                width: 50%;
+                height: 100%;
+                background: none;
+                border-radius: 20px;
+                border: none;
+                font-size: 14px;
+                color: $primary;
+                cursor: pointer;
+            }
+
+            &_completed {
+                width: 50%;
+                height: 100%;
+                background: none;
+                border-radius: 20px;
+                border: none;
+                font-size: 14px;
+                color: $primary;
+                cursor: pointer;
+            }
+		}
+
+		&__main {
+            width: 100%;
+            height: 570px;
+            background: $lightgray;
+            border-radius: 0 0 10px 0;
+            margin-top: 24px;
+            padding: 30px;
+            position: relative;
+
+			&_wrapper {
+			}
+
+			&_category {
+                width: 100%;
+                @include fl-center-sb;
+			}
+
+			&_inner {
+                max-height: 454px;
+                width: 100%;
+                margin-top: 10px;
+                padding: 20px 0;
+                position: absolute;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                overflow: scroll;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+			}
+
+            &_item {
+                width: 320px;
+                height: 140px;
+                background: $white;
+                border-radius: 10px;
+                @include fl-center-sb;
+                margin-bottom: 10px;
+                cursor: pointer;
+                position: relative;
+            }
+		}
+
+        &__completed {
+
+            &_inner {
+                max-height: 454px;
+                width: 100%;
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                overflow: scroll;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+
+        &__item {
+
+            &_info {
+                height: 100%;
+                @include fl-start-sb-col;
+                padding: 10px;
+            }
+    
+            &_banner {
+                width: 140px;
+                height: 140px;
+            }
+
+            &_delete {
+                width: 26px;
+                height: 26px;
+                background: $primary;
+                @include fl-center-center;
+                border-radius: 50%;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+            }
+        }
+}
+
+.active__inner {
+    background: $white;
+}
+
+.main {
+
+		&__category {
+
+			&_title {
+			}
+
+			&_block {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+			}
+		}
+}
+.category {
+
+		&__block {
+
+			&_button {
+                width: 80px;
+                height: 32px;
+                background: none;
+                border: 1px solid $primary;
+                border-radius: 20px;
+                font-size: 14px;
+                color: $primary;
+                cursor: pointer;
+                transition: .4s;
+
+                &:hover {
+                    background: $primary;
+                    color: $white;
+                }
+			}
+		}
+}
+
+.item {
+
+    &__info {
+
+        &_category {
+            width: 50px;
+            height: 20px;
+            background: $lightblue;
+            border-radius: 4px;
+            @include fl-center-center;
+            font-size: 11px;
+            font-weight: 600;
+            color: $primary;
+        }
+
+        &_text {
+            @include fl-start-center-col;
+            gap: 4px;
+        }
+
+        &_completed {
+            width: 132px;
+            height: 30px;
+            background: $lightgray;
+            border-radius: 20px;
+            @include fl-center-center;
+            gap: 8px;
+        }
+    }
+
+    &__banner {
+
+        &_image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+    }
+
+    &__delete {
+
+        &_icon {
+            width: 14px;
+            height: 16px;
+        }
+    }
+}
+.info {
+
+    &__text {
+
+        &_name {
+            font-size: 20px;
+        }
+
+        &_duration {
+            font-size: 13px;
+            color: $text-gray;
+        }
+    }
+
+    &__button {
+        width: 100px;
+        height: 30px;
+        background: $primary;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 14px;
+        color: $white;
+    }
+
+    &__completed {
+        
+        &_text {
+            color: $green;
+            font-weight: 500;
+        }
+
+        &_icon {
+
+        }
+    }
+}
+
+.completed__empty_block {
+    width: 100%;
+    height: 454px;
+    @include fl-center-center;
+}
+
+.completed__empty_text {
+    color: $primary;
+    text-shadow: 0 0 40px $primary;
+}

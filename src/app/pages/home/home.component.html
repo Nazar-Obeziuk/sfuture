@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="wrapper__main">
+            <div class="wrapper__main_header">
+                <h1 class="main__header_title">Welcome Nazar!</h1>
+                <p class="main__header_date">3 Decembar, Sunday</p>
+            </div>
+            <div class="wrapper__main_blocks">
+                <div class="main__blocks_one"></div>
+                <div class="main__blocks_two"></div>
+            </div>
+            <div class="wrapper__main_schedule">
+                <app-schedule></app-schedule>
+            </div>
+        </div>
+        <div class="wrapper__exercise_block">
+            <div class="exercise__block_inner">
+                <div class="exercise__block_header">
+                    <h2 class="exercise__header_title">Exercises</h2>
+                    <select class="exercise__header_category" id="" (change)="onCategoryChange($event)">
+                        <option value="ALL" class="header__category_title">ALL</option>
+                        @for (userCategory of userAllCategories; track $index) {
+                            <option [ngValue]="userCategory" class="header__category_title">{{ userCategory.name }}</option>
+                        }
+                    </select>
+                </div>
+                <div class="exercise__block_main">
+                    @for (exercise of userExercises; track $index) {
+                        <div class="exercise__main_item">
+                            <div class="exercise__item_info">
+                                <div class="item__info_category">{{ exercise.category.name }}</div>
+                                <div class="item__info_text">
+                                    <h3 class="info__text_name">
+                                        {{ exercise.name | slice:0:10 }}
+                                        @if (exercise.name.length >= 10) {
+                                            <span>...</span>
+                                        }
+                                    </h3>
+                                    <p class="info__text_duration">Duration - {{ exercise.duration }} min</p>
+                                </div>
+                                <div class="item__info_button">
+                                    <button (click)="addExerciseToUser(exercise)" class="info__button" type="button">Add Exercise</button>
+                                </div>
+                            </div>
+                            <div class="exercise__item_banner">
+                                <img [src]="exercise.imagePath" alt="" class="item__banner_image">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="modal__block">
+        <div class="modal__wrapper">
+            <div class="modal__wrapper_header">
+                <h2 class="modal__header_title">Choose the date when you want to train</h2>
+            </div>
+            <div class="modal__wrapper_main">
+                <select name="" id="" class="modal__main_select">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+            </div>
+            <div class="modal__wrapper_footer">
+                <button (click)="addExerciseToUser(exercise)" class="info__button" type="button">Add Exercise</button>
+            </div>
+        </div>
+    </div> -->
+</div>
